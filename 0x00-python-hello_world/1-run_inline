@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "print(\"Holberton School: {}\".format(88+10))" | python3
