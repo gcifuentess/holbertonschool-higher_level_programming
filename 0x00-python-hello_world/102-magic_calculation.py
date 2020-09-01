@@ -2,5 +2,5 @@
 def magic_calculation(a, b):
     c = 98
     a = a ** b
-    a = a + b
-    return a
+    b = b + a
+    return b
