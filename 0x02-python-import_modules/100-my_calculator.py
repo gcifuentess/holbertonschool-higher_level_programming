@@ -5,7 +5,8 @@ if __name__ == "__main__":
 
     argv = sys.argv[1:]
     if len(argv) != 3:
-        sys.stderr.write('Usage: ./100-my_calculator.py <a> <operator> <b>\n')
+        sys.stderr.write('Usage: ./100-my_calculator.py '
+                         '<a> <operator> <b>\n')
         sys.exit(1)
 
     a = int(argv[0])
