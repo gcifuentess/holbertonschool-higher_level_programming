@@ -5,7 +5,7 @@ if __name__ == "__main__":
 
     argv = sys.argv[1:]
     if len(argv) != 3:
-        sys.stderr.write('Usage: ./100-my_calculator.py '
+        print('Usage: ./100-my_calculator.py '
                          '<a> <operator> <b>\n')
         sys.exit(1)
 
@@ -14,8 +14,8 @@ if __name__ == "__main__":
     oper = argv[1]
 
     if oper not in ['+', '-', '*', '/']:
-        sys.stderr.write('Unknown operator. '
-                         'Available operators: +, -, * and /\n')
+        print('Unknown operator. '
+              'Available operators: +, -, * and /\n')
         sys.exit(1)
     elif argv[1] == '+':
         print("{} {} {} = {}"
