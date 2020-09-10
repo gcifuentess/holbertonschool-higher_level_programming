@@ -11,3 +11,19 @@ print_matrix_integer(matrix)
 print("--")
 print_matrix_integer()
 
+matrix2 = [
+    [1, 2],
+    [4, 5],
+]
+
+print_matrix_integer(matrix2)
+print("--")
+print_matrix_integer()
+
+matrix3 = [
+    [1]
+]
+
+print_matrix_integer(matrix3)
+print("--")
+print_matrix_integer()
