@@ -3,8 +3,8 @@
 #include "lists.h"
 
 /**
- * is_palindrome - verifyes is a linked list is  a palindrome
- * @head: head of the list
+ * is_palindrome - verifyes if a linked list is a palindrome
+ * @head: head of the linked list
  *
  * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  */
@@ -33,7 +33,10 @@ int is_palindrome(listint_t **head)
 		if (single_j->n == current->n)
 			palindrome = 1;
 		else
+		{
 			palindrome = 0;
+			break;
+		}
 		single_j = single_j->next;
 		current = current->next;
 	}
