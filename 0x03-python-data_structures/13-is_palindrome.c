@@ -20,8 +20,10 @@ int is_palindrome(listint_t **head)
 	{
 		single_j = single_j->next;
 		if (double_j->next)
-			double_j = (double_j->next)->next;
+			double_j = double_j->next->next;
 	}
+	if (double_j->next)
+		double_j = double_j->next;
 	for (current = single_j, prev = NULL; current; )
 	{
 		next = current->next;
@@ -31,7 +33,7 @@ int is_palindrome(listint_t **head)
 	}
 	for (single_j = prev, current = *head; current->next; )
 	{
-		if (single_j->n == current->n)
+		if (single_j->n != current->n)
 			palindrome = 1;
 		else
 			palindrome = 0;
