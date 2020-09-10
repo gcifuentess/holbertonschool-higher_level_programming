@@ -22,8 +22,6 @@ int is_palindrome(listint_t **head)
 		if (double_j->next)
 			double_j = double_j->next->next;
 	}
-	if (double_j->next)
-		double_j = double_j->next;
 	for (current = single_j, prev = NULL; current; )
 	{
 		next = current->next;
