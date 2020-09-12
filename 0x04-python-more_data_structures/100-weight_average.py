@@ -5,5 +5,8 @@ def weight_average(my_list=[]):
     for i in range(len(my_list)):
         num += my_list[i][0] * my_list[i][1]
         denum += my_list[i][1]
-    result = num / denum
+    if denum != 0:
+        result = num / denum
+    else:
+        result = 0
     return result
