@@ -6,3 +6,12 @@ my_list = [(1, 2), (2, 1), (3, 10), (4, 2)]
 result = weight_average(my_list)
 print("Average: {:0.2f}".format(result))
 
+my_list = [(1, 0), (2, 0), (3, 0)]
+# = ((1 * 2) + (2 * 1) + (3 * 10) + (4 * 2)) / (2 + 1 + 10 + 2)
+result = weight_average(my_list)
+print("Average: {:0.2f}".format(result))
+
+my_list = []
+# = ((1 * 2) + (2 * 1) + (3 * 10) + (4 * 2)) / (2 + 1 + 10 + 2)
+result = weight_average(my_list)
+print("Average: {:0.2f}".format(result))
