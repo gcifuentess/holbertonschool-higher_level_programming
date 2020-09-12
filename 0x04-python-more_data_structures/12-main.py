@@ -12,6 +12,9 @@ print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 roman_number = "IX"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
+roman_number = "XXIV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
 roman_number = "LXXXVII"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
