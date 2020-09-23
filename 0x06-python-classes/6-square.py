@@ -5,12 +5,17 @@
 class Square:
     """Defines a square"""
 
-    def __init__(self, size=0):
+    def __str__(self):
+        self.my_print()
+
+    def __init__(self, size=0, position=(0, 0)):
         """Creator
         Args:
             size: side of the square
+            position: Position of the square
         """
         self.size = size
+        self.position = position
 
     @property
     def size(self):
