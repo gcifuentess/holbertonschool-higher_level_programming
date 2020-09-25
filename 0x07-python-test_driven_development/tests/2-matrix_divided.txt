@@ -1,0 +1,64 @@
+===============================
+Tests for matrix_divided()
+===============================
+
+``matrix_divided()``
+
+::
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test expected args:
+
+    >>> matrix_divided([[6, 2, 4], [3, 5, 1]], 2)
+    [[3.0, 1.0, 2.0], [1.5, 2.5, 0.5]]
+
+Test division by negative number:
+
+    >>> matrix_divided([[6, 2, 4], [3, 5, 1]], -2)
+    [[-3.0, -1.0, -2.0], [-1.5, -2.5, -0.5]]
+
+Test division by big number:
+
+    >>> matrix_divided([[6, 2, 4], [3, 5, 1]], 1000000000)
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Test division by a really big number:
+
+    >>> matrix_divided([[6, 2, 4], [3, 5, 1]], 1e300000)
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Test division by zero:
+
+    >>> matrix_divided([[6, 2, 4], [3, 5, 1]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Test No Matrix
+
+    >>> matrix_divided(, 2)
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax
+
+Test Empty Matrix
+
+    >>> matrix_divided([[]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test Wrong Matrix
+
+    >>> matrix_divided("test", 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test Matrix with wron element:
+
+    >>> matrix_divided([[6, "test", 4], [3, 5, 1]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
