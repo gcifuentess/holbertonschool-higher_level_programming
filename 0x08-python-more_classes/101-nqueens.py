@@ -3,7 +3,7 @@
 
 
 def validation(chessboard, row, column):
-    '''validates current possition.
+    '''validates current position.
     Args:
         chessboard: actual state of the game.
         row: row to validate.
@@ -23,9 +23,11 @@ def backtracking(chessboard, column):
         column: the colum to backtrack,
     '''
     q = len(chessboard)
-    if column is q:
+    if column == q:
+        solution = []
         for col in range(q):
-            print(str([col, chessboard[col]]))
+            solution.append([col, chessboard[col]])
+        print(solution)
         return
 
     for row in range(q):
