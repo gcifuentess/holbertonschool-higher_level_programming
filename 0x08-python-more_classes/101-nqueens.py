@@ -10,8 +10,8 @@ def validation(chessboard, row, column):
         column: column to validate.
     '''
     for col in range(column):
-        if chessboard[col] == row
-        or abs(chessboard[col] - row) == abs(col - column):
+        if (chessboard[col] == row or
+                abs(chessboard[col] - row) == abs(col - column)):
             return False
     return True
 
@@ -22,10 +22,10 @@ def backtracking(chessboard, column):
         chessboard: actual state of the game.
         column: the colum to backtrack,
     '''
-    q = len(chesboard)
+    q = len(chessboard)
     if column is q:
         for col in range(q):
-            print(str([[col, chessboard[col]])
+            print(str([col, chessboard[col]]))
         return
 
     for row in range(q):
