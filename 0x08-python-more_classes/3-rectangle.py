@@ -78,7 +78,7 @@ class Rectangle:
         """
         str_rect = ""
         if not self.__width or not self.__height:
-            return "\n"
+            return ""
 
         for i in range(self.__height):
             for j in range(self.__width):
