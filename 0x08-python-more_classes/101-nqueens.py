@@ -41,14 +41,14 @@ if __name__ == "__main__":
         sys.exit(1)
     q = 0
     try:
-        n = int(sys.argv[1])
+        q = int(sys.argv[1])
     except:
         print("N must be a number")
         sys.exit(1)
-    if n < 4:
+    if q < 4:
         print("N must be at least 4")
         sys.exit(1)
     chessboard = []
     for col in range(q):
-        chessboard.append[col]
+        chessboard.append(col)
     backtracking(chessboard, 0)
