@@ -84,3 +84,23 @@ string, a list, tuple, or an imaginari number (j).
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
+
+    >>> add_integer(None, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(2, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(float('nan'), 3)
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(2, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
