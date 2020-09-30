@@ -37,6 +37,11 @@ Test division by zero:
 
 Test No Matrix
 
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
     >>> matrix_divided(, 2)
     Traceback (most recent call last):
     ...
@@ -51,6 +56,26 @@ Test No Matrix
     Traceback (most recent call last):
     ...
     NameError: name 'div' is not defined
+
+    >>> matrix_divided([matrix[0], [3, 5, 1]], div)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'matrix' is not defined
+
+    >>> matrix_divided([[], [], []], 10)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([], 1)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[]], 10)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Test list of lists of integers but not rectangular / div= integer
 
@@ -72,6 +97,10 @@ Test Wrong Matrix
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test division by nan:
+    >>> matrix_divided([[2, 4, 8], [1, 2, 3]], float('nan'))
+    [[nan, nan, nan], [nan, nan, nan]]
 
 Test Matrix with wrong element:
 
