@@ -23,7 +23,8 @@ class Base:
 
         if (list_dictionaries is None or
                 list_dictionaries == [] or
-                type(list_dictionaries) is not list):
+                type(list_dictionaries) is not list or
+                not list_dictionaries):
             return "[]"
         return json.dumps(list_dictionaries)
 
