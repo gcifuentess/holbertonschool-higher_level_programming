@@ -12,22 +12,16 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Square constructor"""
         self.size = size
-        super().__init__(self.__size, self.__size, x, y, id)
+        super().__init__(self.size, self.size, x, y, id)
 
     @property
     def size(self):
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
-        if type(value) is int:
-            if value < 1:
-                raise ValueError("width must be > 0")
-            self.__size = int(value)
-            self.width = self.__size
-            self.height = self.__size
-        else:
-            raise TypeError("width must be an integer")
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """returns the string to be printed when print() invoked"""
