@@ -2,6 +2,7 @@
 """Base Module"""
 import json
 import os.path
+import csv
 
 
 class Base:
@@ -77,5 +78,43 @@ class Base:
                 lists.append(Base.from_json_string(line))
         for a_list in lists:
             for dic in a_list:
+                instances.append(cls.create(**dic))
+        return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in csv"""
+
+        objs_attr = []
+        if list_objs is not None:
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    objs_attr.append([obj.id, obj.width, obj.height,
+                                      obj.x, obj.y])
+                if cls.__name__ == "Square":
+                    objs_attr.append([obj.id, obj.size,
+                                      obj.x, obj.y])
+        with open(cls.__name__ + ".csv", 'w', newline='',
+                  encoding='utf-8') as f:
+            writer = csv.writer(f)
+            for obj_attr in objs_attr:
+                writer.writerow(obj_attr)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """serializes in csv"""
+        if os.path.isfile(cls.__name__ + ".csv") is False:
+            return []
+        instances = []
+        with open(cls.__name__ + ".csv", 'r', newline='',
+                  encoding='utf-8') as f:
+            reader = csv.reader(f)
+            for line in reader:
+                l = [int(field) for field in line]
+                if cls.__name__ == "Rectangle":
+                    dic = {'id': l[0], 'width': l[1], 'height': l[2],
+                           'x': l[3], 'y': l[4]}
+                if cls.__name__ == "Square":
+                    dic = {'id': l[0], 'size': l[1], 'x': l[2], 'y': l[3]}
                 instances.append(cls.create(**dic))
         return instances
