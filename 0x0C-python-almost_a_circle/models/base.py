@@ -3,6 +3,7 @@
 import json
 import os.path
 import csv
+import turtle
 
 
 class Base:
@@ -22,7 +23,8 @@ class Base:
     def to_json_string(list_dictionaries):
         """returns the JSON string representation of list_dictionaries"""
 
-        if list_dictionaries is not None:
+        if (list_dictionaries is not None and
+                type(list_dictionaries) is list):
             return json.dumps(list_dictionaries)
         else:
             return "[]"
@@ -117,3 +119,39 @@ class Base:
                     dic = {'id': l[0], 'size': l[1], 'x': l[2], 'y': l[3]}
                 instances.append(cls.create(**dic))
         return instances
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all the Rectangles and Squares"""
+        my_colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255),
+                     (125, 0, 0), (0, 125, 0), (0, 0, 125)]
+        turtle.Screen().colormode(255)
+        i = 0
+        multiplier = 2
+        for obj in (list_rectangles + list_squares):
+            turt = turtle.Turtle()
+            turt.color(my_colors[i])
+            turt.setpos((obj.x + turt.pos()[0], obj.y - turt.pos()[1]))
+            if i % 2 == 0:
+                turt.pensize(2)
+                turt.forward(obj.width * multiplier)
+                turt.right(90)
+                turt.forward(obj.height * multiplier)
+                turt.right(90)
+                turt.forward(obj.width * multiplier)
+                turt.right(90)
+                turt.forward(obj.height * multiplier)
+                turt.right(90)
+            else:
+                turt.pensize(10)
+                turt.forward(obj.width * multiplier)
+                turt.left(90)
+                turt.forward(obj.height * multiplier)
+                turt.left(90)
+                turt.forward(obj.width * multiplier)
+                turt.left(90)
+                turt.forward(obj.height * multiplier)
+                turt.left(90)
+            i += 1
+            if i > 5:
+                i = 0
