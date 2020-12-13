@@ -20,6 +20,6 @@ if __name__ == "__main__":
     session = Session()
     my_query = session.query(State).filter(State.name.like('%a%')).\
         order_by(State.id)
-    for city in my_query:
-        print("{}: {}".format(city.id, city.name))
+    for state in my_query:
+        print("{}: {}".format(state.id, state.name))
     session.close()
