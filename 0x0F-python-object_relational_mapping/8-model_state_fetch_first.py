@@ -18,7 +18,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     my_query = session.query(State).order_by(State.id)
-    if my_query: # my_query.count() != 0:
+    if my_query:  # my_query.count() != 0:
         print("{}: {}".format(my_query[0].id, my_query[0].name))
     else:
         print("Nothing")
