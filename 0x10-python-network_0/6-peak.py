@@ -7,8 +7,9 @@ def find_peak(list_of_integers):
 
     if list_of_integers:
         list_i = list_of_integers
-        if len(list_i) > 2:
-            pivot = int(len(list_i) / 2)
+        len_i = len(list_i)
+        if len_i > 2:
+            pivot = int(len_i / 2)
             peak = list_i[pivot]
             if peak > list_i[pivot - 1] and peak > list_i[pivot + 1]:
                 return peak
