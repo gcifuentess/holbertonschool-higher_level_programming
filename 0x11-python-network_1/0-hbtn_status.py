@@ -9,6 +9,6 @@ if __name__ == "__main__":
 
         request_utf8 = request.decode('utf8')
         print("Body response:\n \
-        \t- type: {}\n \
-        \t- content: {}\n \
-        \t- utf8 content: {}".format(type(request), request, request_utf8))
+\t- type: {}\n \
+\t- content: {}\n \
+\t- utf8 content: {}".format(type(request), request, request_utf8))
