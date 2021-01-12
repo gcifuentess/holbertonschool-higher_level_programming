@@ -7,8 +7,7 @@ from sys import argv
 if __name__ == "__main__":
     url = 'https://api.github.com/repos/' +\
           argv[2] + '/' + argv[1] + '/commits'
-    header = {'Accept': 'application/vnd.github.v3+json'}
-    r = requests.get(url, header)
+    r = requests.get(url)
     r = r.json()
     commits = 10
     for commit in r:
