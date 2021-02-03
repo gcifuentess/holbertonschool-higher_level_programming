@@ -10,7 +10,7 @@ if (!cast) {
 } else {
   for (i = 0; i < cast; i++) {
     for (j = 0; j < cast; j++) {
-      square = square + '#';
+      square = square + 'X';
     }
     square = square + '\n';
   }
