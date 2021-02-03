@@ -12,7 +12,9 @@ if (!cast) {
     for (j = 0; j < cast; j++) {
       square = square + 'X';
     }
-    square = square + '\n';
+    if (i < (cast - 1)) {
+      square = square + '\n';
+    }
   }
   console.log(square);
 }
