@@ -7,10 +7,12 @@ class Rectangle {
       this.height = h;
     }
     this.print = function () {
-      let strR = 'X';
-      strR = strR.repeat(w) + '\n';
-      strR = strR.repeat(h);
-      console.log(strR.slice(0, strR.length - 1));
+      if (w > 0 && h > 0) {
+        let strR = 'X';
+        strR = strR.repeat(w) + '\n';
+        strR = strR.repeat(h);
+        console.log(strR.slice(0, strR.length - 1));
+      }
     };
   }
 }
