@@ -4,7 +4,7 @@ const request = require('request');
 const url = process.argv[2];
 let data;
 let characters = '';
-const charID = '81'; // Wedge Antilles's  ID
+const charID = '18'; // Wedge Antilles's  ID
 let count = 0;
 request(url, function (error, response, body) {
   if (error) console.error('error:', error); // Print the error if one occurred
