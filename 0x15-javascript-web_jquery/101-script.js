@@ -8,7 +8,7 @@
 //  You must use the jQuery API
 //  You script must work when it imported from the HEAD ta
 document.addEventListener('DOMContentLoaded', function () {
-   $('DIV#add_item').click(() => $('UL.my_list').append('<li>Item</li>'));
-   $('DIV#remove_item').click(() => $('UL.my_list LI').eq(-1).remove());
-   $('DIV#clear_list').click(() => $('UL.my_list').empty());
+  $('DIV#add_item').click(() => $('UL.my_list').append('<li>Item</li>'));
+  $('DIV#remove_item').click(() => $('UL.my_list LI').eq(-1).remove());
+  $('DIV#clear_list').click(() => $('UL.my_list').empty());
 });

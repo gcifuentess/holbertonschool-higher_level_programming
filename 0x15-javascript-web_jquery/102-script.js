@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   $('INPUT#btn_translate').click(() => {
     const language = $('INPUT#language_code').val();
     const url = 'https://fourtonfish.com/hellosalut/?lang=' + language;
-    $.get(url, function( data ) {
+    $.get(url, function (data) {
       $('DIV#hello').text(data.hello);
     });
   });
